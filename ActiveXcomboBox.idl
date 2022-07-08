@@ -1,0 +1,52 @@
+﻿// ActiveXcomboBox.idl: ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 生成类型库(ActiveXcomboBox.tlb)，该类型库将成为
+// ActiveXcomboBox.ocx。
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(c151c9dd-077d-4ddc-9726-6d11dc826f6e), version(1.0),
+  control ]
+library ActiveXcomboBoxLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CActiveXcomboBoxCtrl 的主调度接口
+	[ 
+		uuid(069e40cb-d3ce-4951-8022-ebb189cb8b72)
+	]
+	dispinterface _DActiveXcomboBox
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1), helpstring("methosd AddString")] void AddString(BSTR strData);
+	};
+
+	//  CActiveXcomboBoxCtrl 的事件调度接口
+
+	[ 
+		uuid(ea88ea8d-5385-4c5f-b0db-00143b9ca0cb)
+	]
+	dispinterface _DActiveXcomboBoxEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CActiveXcomboBoxCtrl 的类信息
+	[
+		uuid(b5bd875a-d44e-451d-857d-8c20295a81d8)
+	]
+	coclass ActiveXcomboBox
+	{
+		[default] dispinterface _DActiveXcomboBox;
+		[default, source] dispinterface _DActiveXcomboBoxEvents;
+	};
+
+};
